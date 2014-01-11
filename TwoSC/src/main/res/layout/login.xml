@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/black">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,9 +14,8 @@
             android:id="@+id/join_free"
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:paddingLeft="30dp"
-            android:gravity="center_vertical"
-            android:paddingRight="30dp" >
+            android:gravity="center"
+            android:background="@drawable/join_free_back">
 
             <TextView
                 android:id="@+id/appName"
@@ -29,18 +28,20 @@
                 style="@style/loginTextView"
                 android:layout_below="@id/appName"
                 android:gravity="center_horizontal"
-                android:text="@string/new_login_introduce" />
+                android:background="@drawable/introduce" />
 
             <Button
                 android:id="@+id/joinFree"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/introduce"
                 android:layout_marginTop="10dp"
                 android:text="@string/register_now"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@drawable/login_button"
+                android:layout_centerHorizontal="true"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -51,8 +52,8 @@
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="48dp"
@@ -78,11 +79,11 @@
                 android:inputType="textPassword" />
 
             <Button
-                android:id="@+id/loginbutton"
+                android:id="@+id/loginButton"
                 style="@style/loginButton"
                 android:layout_below="@+id/password"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/sign_in"
+                android:background="@drawable/login_button"
                 android:text="@string/login" >
             </Button>
 
@@ -90,11 +91,11 @@
                 android:id="@+id/forgot_pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/loginbutton"
+                android:layout_below="@+id/loginButton"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:text="@string/forgot_password"
-                android:textColor="#1db2fe"
+                android:textColor="@color/green_71aa17"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>

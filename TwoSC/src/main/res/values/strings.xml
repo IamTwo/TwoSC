@@ -3,7 +3,7 @@
 
     <string name="app_name">TwoSC</string>
     <string name="action_settings">Settings</string>
-    <string name="new_login_introduce">Become a member of us</string>
+    <string name="new_login_introduce">Become a member of us!</string>
     <string name="register_now">Join Free</string>
     <string name="hint_account">Username</string>
     <string name="hint_password">Password</string>
