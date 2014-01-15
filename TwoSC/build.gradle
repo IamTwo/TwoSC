@@ -17,7 +17,7 @@ android {
     buildToolsVersion "19.0.0"
 
     defaultConfig {
-        minSdkVersion 7
+        minSdkVersion 8
         targetSdkVersion 19
     }
 }
@@ -25,5 +25,6 @@ android {
 dependencies {
 	compile 'com.android.support:appcompat-v7:+'
     compile project(":ext:Volley")
+    compile project(":ext:ViewPagerIndicator:library")
 }
 

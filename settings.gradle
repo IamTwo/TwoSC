@@ -1,1 +1,1 @@
-include ':TwoSC', ':ext:Volley'
+include ':TwoSC', ':ext:Volley', ":ext:ViewPagerIndicator:library"
