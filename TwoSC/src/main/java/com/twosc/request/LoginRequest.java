@@ -26,8 +26,8 @@ public class LoginRequest extends BaseRequest{
     @Override
     protected Map<String, String> updateParams() {
         Map<String, String> params = new HashMap<String, String>();
-        params.put("method", "");
-        params.put("user_name", mUserName);
+        params.put("timestamp", "");
+        params.put("username", mUserName);
         params.put("password", mUserPwd);
         return params;
     }

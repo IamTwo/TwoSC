@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.twosc.R;
 import com.twosc.request.LoginRequest;
 
@@ -34,9 +35,14 @@ public class Login extends TwoActivity {
                 LoginRequest loginRequest = new LoginRequest(new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
+                        System.out.println("response: " + response);
                     }
-                }, null, getBaseContext(), "jiexiang", "123");
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println("hehe");
+                    }
+                }, getBaseContext(), "test", "test123");
                 loginRequest.execute();
             }
         });
