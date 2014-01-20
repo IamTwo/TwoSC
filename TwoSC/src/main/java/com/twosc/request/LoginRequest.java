@@ -1,7 +1,6 @@
 package com.twosc.request;
 
 import android.content.Context;
-import android.view.View;
 
 import com.android.volley.Response.Listener;
 import com.android.volley.Response.ErrorListener;
