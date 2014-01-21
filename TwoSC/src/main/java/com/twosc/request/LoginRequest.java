@@ -1,9 +1,17 @@
 package com.twosc.request;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.Response;
 import com.android.volley.Response.Listener;
 import com.android.volley.Response.ErrorListener;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.twosc.activity.Introduce;
+import com.twosc.util.SharedPreference;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +22,14 @@ import java.util.Map;
 public class LoginRequest extends BaseRequest{
     private String mUserName;
     private String mUserPwd;
+    private Context mContext;
 
     public LoginRequest(Listener<String> listener, ErrorListener errorListener, Context context,
                         String userName, String userPwd) {
         super(listener, errorListener, context);
         this.mUserName = userName;
         this.mUserPwd = userPwd;
+        this.mContext = context;
     }
 
     @Override
@@ -34,5 +44,18 @@ public class LoginRequest extends BaseRequest{
     @Override
     protected void deliverResponse(String response) {
         super.deliverResponse(response);
+    }
+
+    @Override
+    protected Response<String> parseNetworkResponse(NetworkResponse response) {
+        String data = super.parseNetworkResponse(response).result;
+
+        if(response.statusCode == 200) {
+            Introduce.ifHasLogin = true;
+        } else {
+            Introduce.ifHasLogin = false;
+        }
+
+        return Response.success(data, HttpHeaderParser.parseCacheHeaders(response));
     }
 }

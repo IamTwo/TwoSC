@@ -23,9 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.twosc.activity.Login"
-            android:label="@string/title_activity_login"
-            android:theme="@android:style/Theme.Translucent" >
+            android:name="com.twosc.activity.Home"
+            android:label="@string/title_activity_home">
         </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

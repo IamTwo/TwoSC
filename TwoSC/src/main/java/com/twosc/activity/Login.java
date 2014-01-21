@@ -35,7 +35,7 @@ public class Login extends TwoActivity {
                 LoginRequest loginRequest = new LoginRequest(new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        System.out.println("response: " + response);
+                        System.out.println("response: " + response.hashCode());
                     }
                 }, new Response.ErrorListener() {
                     @Override

@@ -99,8 +99,6 @@ public class BaseRequest extends StringRequest{
             parsed = new String(response.data);
         }
 
-        String cookieHeader = response.headers.get("Set-Cookie");
-
         return Response.success(parsed, HttpHeaderParser.parseCacheHeaders(response));
     }
 }
