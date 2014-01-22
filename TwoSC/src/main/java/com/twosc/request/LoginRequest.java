@@ -44,17 +44,12 @@ public class LoginRequest extends BaseRequest{
     @Override
     protected void deliverResponse(String response) {
         super.deliverResponse(response);
+        System.out.println(response);
     }
 
     @Override
     protected Response<String> parseNetworkResponse(NetworkResponse response) {
         String data = super.parseNetworkResponse(response).result;
-
-        if(response.statusCode == 200) {
-            Introduce.ifHasLogin = true;
-        } else {
-            Introduce.ifHasLogin = false;
-        }
 
         return Response.success(data, HttpHeaderParser.parseCacheHeaders(response));
     }

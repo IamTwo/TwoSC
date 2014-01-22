@@ -15,6 +15,9 @@
     <string name="cancel">Cancel</string>
     <string name="user_empty">The user name cannot be empty.</string>
     <string name="password_empty">The password cannot be empty.</string>
+    <string name="login_fail">Incorrect username or password provided. Please try again.</string>
+    <string name="no_connection">No data connection. Unable to login in.</string>
+    <string name="sending">Sending...</string>
 
     <string name="title_activity_home">Home</string>
 

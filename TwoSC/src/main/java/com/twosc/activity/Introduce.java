@@ -2,11 +2,13 @@ package com.twosc.activity;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.res.TypedArray;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +24,8 @@ import com.twosc.R;
 import com.twosc.adapter.PhotoPageAdapter;
 import com.twosc.model.AnimationModel;
 import com.twosc.request.LoginRequest;
+import com.twosc.util.NetworkHelper;
+import com.twosc.util.NetworkReceiver;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
@@ -41,14 +45,26 @@ public class Introduce extends Activity {
     private final int[] pics = {R.drawable.guide1,R.drawable.guide2};
     private TypedArray mIntroduceText;
     private Toast mNoUserInput, mNoPwdInput;
+    private Toast mNoLoginInput, mNoConnection;
+    private ProgressDialog progress;
+
+    private NetworkReceiver networkReceiver;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.introduce);
+        registerNetwork();
         findView();
         initData();
         setListener();
+    }
+
+    private void registerNetwork() {
+        NetworkHelper.updateConntectionState(this);
+        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        networkReceiver = new NetworkReceiver();
+        this.registerReceiver(networkReceiver, intentFilter);
     }
 
     public void initData() {
@@ -76,6 +92,11 @@ public class Introduce extends Activity {
         mAdapter = new PhotoPageAdapter(mViews);
         mNoUserInput = Toast.makeText(Introduce.this, R.string.user_empty, Toast.LENGTH_LONG);
         mNoPwdInput = Toast.makeText(Introduce.this, R.string.password_empty, Toast.LENGTH_LONG);
+        mNoLoginInput = Toast.makeText(Introduce.this, R.string.login_fail, Toast.LENGTH_LONG);
+        mNoConnection = Toast.makeText(Introduce.this, R.string.no_connection, Toast.LENGTH_LONG);
+        progress = new ProgressDialog(this);
+        progress.setMessage(getString(R.string.sending));
+        progress.setTitle(getString(R.string.login));
     }
 
     public void setListener() {
@@ -132,22 +153,32 @@ public class Introduce extends Activity {
                             return;
                         }
 
+                        if(!NetworkHelper.isNetworkActive()) {
+                            mNoConnection.show();
+                            return;
+                        }
+
                         LoginRequest loginRequest = new LoginRequest(new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if(ifHasLogin) {
-                                    Intent intent = new Intent();
-                                    intent.setClass(Introduce.this, Home.class);
-                                    startActivity(intent);
+                                if(progress != null && progress.isShowing()) {
+                                    progress.dismiss();
                                 }
+                                Intent intent = new Intent();
+                                intent.setClass(Introduce.this, Home.class);
+                                startActivity(intent);
                             }
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Log.d("VolleyError: ", error.toString());
+                                if(progress != null && progress.isShowing()) {
+                                    progress.dismiss();
+                                }
+                                mNoLoginInput.show();
                             }
                         }, getBaseContext(), username, password);
                         loginRequest.execute();
+                        progress.show();
                     }
                 });
 
