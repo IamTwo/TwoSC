@@ -9,7 +9,9 @@ buildscript {
 apply plugin: 'android'
 
 repositories {
+    mavenLocal()
     mavenCentral()
+    maven { url "http://artifactory.tagged.com:8081/artifactory/repo" }
 }
 
 android {
@@ -24,6 +26,7 @@ android {
 
 dependencies {
 	compile 'com.android.support:appcompat-v7:+'
+    compile 'com.github.chrisbanes.pulltorefresh:pulltorefresh:1.4.1@aar'
     compile project(":ext:Volley")
     compile project(":ext:ViewPagerIndicator:library")
 }

@@ -20,5 +20,8 @@
     <string name="sending">Sending...</string>
 
     <string name="title_activity_home">Home</string>
+    <string name="activity">Activity</string>
+
+    <string name="title_activity_activity">Activity</string>
 
 </resources>

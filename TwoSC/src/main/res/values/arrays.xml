@@ -3,5 +3,6 @@
     <string-array name="photo_introduce">
         <item>Beijing</item>
         <item>Shanghai</item>
+        <item>Japan</item>
     </string-array>
 </resources>

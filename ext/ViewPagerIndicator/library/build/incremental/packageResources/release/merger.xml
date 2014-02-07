@@ -2,114 +2,114 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res" >
+        <source path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res" >
             <file
                 name="vpi__dark_theme"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/color/vpi__dark_theme.xml"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/color/vpi__dark_theme.xml"
                 qualifiers=""
                 type="color" />
             <file
                 name="vpi__light_theme"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/color/vpi__light_theme.xml"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/color/vpi__light_theme.xml"
                 qualifiers=""
                 type="color" />
             <file
                 name="vpi__tab_indicator"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable/vpi__tab_indicator.xml"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable/vpi__tab_indicator.xml"
                 qualifiers=""
                 type="drawable" />
             <file
                 name="vpi__tab_selected_focused_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_selected_focused_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_selected_focused_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_selected_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_selected_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_pressed_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_selected_pressed_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_selected_pressed_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_focused_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_unselected_focused_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_unselected_focused_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_unselected_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_unselected_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_pressed_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_unselected_pressed_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-hdpi/vpi__tab_unselected_pressed_holo.9.png"
                 qualifiers="hdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_focused_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_selected_focused_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_selected_focused_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_selected_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_selected_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_pressed_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_selected_pressed_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_selected_pressed_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_focused_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_unselected_focused_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_unselected_focused_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_unselected_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_unselected_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_pressed_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_unselected_pressed_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-mdpi/vpi__tab_unselected_pressed_holo.9.png"
                 qualifiers="mdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_focused_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_selected_focused_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_selected_focused_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_selected_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_selected_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_selected_pressed_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_selected_pressed_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_selected_pressed_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_focused_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_unselected_focused_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_unselected_focused_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_unselected_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_unselected_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
                 name="vpi__tab_unselected_pressed_holo"
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_unselected_pressed_holo.9.png"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/drawable-xhdpi/vpi__tab_unselected_pressed_holo.9.png"
                 qualifiers="xhdpi"
                 type="drawable" />
             <file
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__attrs.xml"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__attrs.xml"
                 qualifiers="" >
                 <attr
                     name="centered"
@@ -296,7 +296,7 @@
                 </declare-styleable>
             </file>
             <file
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__colors.xml"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__colors.xml"
                 qualifiers="" >
                 <color name="vpi__bright_foreground_holo_dark" >@color/vpi__background_holo_light
                 </color>
@@ -316,7 +316,7 @@
                 </color>
             </file>
             <file
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__defaults.xml"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__defaults.xml"
                 qualifiers="" >
                 <dimen name="default_circle_indicator_radius" >3dp
                 </dimen>
@@ -416,7 +416,7 @@ true
                 </color>
             </file>
             <file
-                path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__styles.xml"
+                path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/res/values/vpi__styles.xml"
                 qualifiers="" >
 
                 <style
@@ -488,10 +488,10 @@ bold
                 </style>
             </file>
         </source>
-        <source path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/build/res/rs/release" />
+        <source path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/build/res/rs/release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/Users/test/Documents/Study/TwoSC/ext/ViewPagerIndicator/library/src/release/res" />
+        <source path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/src/release/res" />
     </dataSet>
 
 </merger>

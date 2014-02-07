@@ -22,14 +22,12 @@ import java.util.Map;
 public class LoginRequest extends BaseRequest{
     private String mUserName;
     private String mUserPwd;
-    private Context mContext;
 
     public LoginRequest(Listener<String> listener, ErrorListener errorListener, Context context,
                         String userName, String userPwd) {
         super(listener, errorListener, context);
         this.mUserName = userName;
         this.mUserPwd = userPwd;
-        this.mContext = context;
     }
 
     @Override

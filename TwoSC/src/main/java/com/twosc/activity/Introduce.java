@@ -18,11 +18,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Response;
+import com.android.volley.Response.Listener;
+import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
 import com.twosc.R;
 import com.twosc.adapter.PhotoPageAdapter;
-import com.twosc.model.AnimationModel;
 import com.twosc.request.LoginRequest;
 import com.twosc.util.NetworkHelper;
 import com.twosc.util.NetworkReceiver;
@@ -34,7 +34,6 @@ import java.util.ArrayList;
  * Created by Jie Xiang on 1/14/14.
  */
 public class Introduce extends Activity {
-    public static boolean ifHasLogin = false;
     private ViewPager mPhotoPage;
     private ArrayList<View> mViews;
     private PhotoPageAdapter mAdapter;
@@ -42,11 +41,13 @@ public class Introduce extends Activity {
     private TextView mPhotoIntroduce;
     private Button mButtonLogin;
     private EditText mUserName, mPassword;
-    private final int[] pics = {R.drawable.guide1,R.drawable.guide2};
+    private final int[] pics = {R.drawable.guide1, R.drawable.guide2, R.drawable.guide3};
     private TypedArray mIntroduceText;
     private Toast mNoUserInput, mNoPwdInput;
     private Toast mNoLoginInput, mNoConnection;
     private ProgressDialog progress;
+    private Listener mListener;
+    private ErrorListener mErrorListener;
 
     private NetworkReceiver networkReceiver;
 
@@ -117,6 +118,28 @@ public class Introduce extends Activity {
             }
         });
 
+        mListener = new Listener() {
+            @Override
+            public void onResponse(Object response) {
+                if(progress != null && progress.isShowing()) {
+                    progress.dismiss();
+                }
+                Intent intent = new Intent();
+                intent.setClass(Introduce.this, Home.class);
+                startActivity(intent);
+            }
+        };
+
+        mErrorListener = new ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                if(progress != null && progress.isShowing()) {
+                    progress.dismiss();
+                }
+                mNoLoginInput.show();
+            }
+        };
+
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,33 +181,12 @@ public class Introduce extends Activity {
                             return;
                         }
 
-                        LoginRequest loginRequest = new LoginRequest(new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                if(progress != null && progress.isShowing()) {
-                                    progress.dismiss();
-                                }
-                                Intent intent = new Intent();
-                                intent.setClass(Introduce.this, Home.class);
-                                startActivity(intent);
-                            }
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                if(progress != null && progress.isShowing()) {
-                                    progress.dismiss();
-                                }
-                                mNoLoginInput.show();
-                            }
-                        }, getBaseContext(), username, password);
+                        LoginRequest loginRequest = new LoginRequest(mListener, mErrorListener,
+                                getBaseContext(), username, password);
                         loginRequest.execute();
                         progress.show();
                     }
                 });
-
-                AnimationModel animationModel = new AnimationModel(Introduce.this);
-                animationModel.overridePendingTransition(R.anim.abc_slide_in_bottom,
-                        R.anim.abc_slide_out_top);
             }
         });
     }

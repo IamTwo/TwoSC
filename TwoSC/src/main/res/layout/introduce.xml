@@ -3,27 +3,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent" android:gravity="center_horizontal"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:paddingBottom="@dimen/introduce_top">
 
-    <ImageView android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/ic_launcher"
-        android:layout_marginTop="@dimen/introduce_margin"
-        android:contentDescription="@string/remove_warning"/>
-
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/church_introduce"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:layout_marginTop="@dimen/introduce_margin"/>
-
-    <android.support.v4.view.ViewPager
-        android:layout_height="300dp"
+    <LinearLayout
+        android:layout_height="0dp"
         android:layout_width="fill_parent"
-        android:id="@+id/photoPage"
-        android:layout_marginTop="@dimen/introduce_margin"/>
+        android:orientation="vertical"
+        android:layout_weight="8"
+        android:gravity="center_horizontal"
+        android:background="@drawable/back">
+
+        <ImageView android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_launcher"
+            android:contentDescription="@string/remove_warning"
+            android:layout_marginTop="@dimen/introduce_top"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/church_introduce"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginTop="@dimen/introduce_margin"/>
+
+        <android.support.v4.view.ViewPager
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="@dimen/introduce_margin"
+            android:layout_marginRight="@dimen/introduce_margin"
+            android:id="@+id/photoPage"
+            android:layout_marginTop="@dimen/introduce_margin"/>
+    </LinearLayout>
 
     <TextView
         android:layout_height="wrap_content"
@@ -41,12 +53,11 @@
         android:padding="5dp"/>
 
     <Button
-        android:layout_height="60dp"
+        android:layout_height="0dp"
         android:layout_width="150dp"
         android:id="@+id/loginButton"
         style="@style/loginButton"
         android:background="@drawable/introduce_button"
         android:text="@string/login"
-        android:layout_marginTop="@dimen/introduce_margin"/>
-
+        android:layout_weight="1"/>
 </LinearLayout>

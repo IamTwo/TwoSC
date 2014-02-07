@@ -30,8 +30,7 @@ public class BaseRequest extends StringRequest{
      * @param errorListener
      */
     public BaseRequest(Listener<String> listener, ErrorListener errorListener, Context context) {
-        super(Method.POST, HTTP_URL_PREFIX, listener, errorListener);
-        this.mContext = context;
+        this(listener, errorListener, HTTP_URL_PREFIX, context);
     }
 
     /**
@@ -41,8 +40,14 @@ public class BaseRequest extends StringRequest{
      * @param errorListener
      * @param url
      */
-    public BaseRequest(Listener<String> listener, ErrorListener errorListener, String url) {
-        super(Method.POST, url, listener, errorListener);
+    public BaseRequest(Listener<String> listener, ErrorListener errorListener, String url, Context context) {
+        this(Method.POST, listener, errorListener, url, context);
+    }
+
+    public BaseRequest(int method, Listener<String> listener, ErrorListener errorListener, String url,
+                       Context context) {
+        super(method, url, listener, errorListener);
+        mContext = context;
     }
 
     /**
