@@ -5,6 +5,8 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.TypedArray;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
@@ -48,8 +50,12 @@ public class Introduce extends Activity {
     private ProgressDialog progress;
     private Listener mListener;
     private ErrorListener mErrorListener;
+    private SharedPreferences mSPreference;
+
 
     private NetworkReceiver networkReceiver;
+
+    public Dialog login;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +65,10 @@ public class Introduce extends Activity {
         findView();
         initData();
         setListener();
+    }
+
+    public void onResume() {
+        super.onResume();
     }
 
     private void registerNetwork() {
@@ -78,9 +88,11 @@ public class Introduce extends Activity {
             mViews.add(v);
         }
 
+        mPhotoPage.setPageMargin(getResources().getDimensionPixelOffset(R.dimen.introduce_margin));
         mPhotoPage.setAdapter(mAdapter);
         mIndicator.setViewPager(mPhotoPage);
         mPhotoIntroduce.setText(mIntroduceText.getString(0));
+        mSPreference = getSharedPreferences("LOGIN_INFOS", 0);
     }
 
     public void findView() {
@@ -98,6 +110,8 @@ public class Introduce extends Activity {
         progress = new ProgressDialog(this);
         progress.setMessage(getString(R.string.sending));
         progress.setTitle(getString(R.string.login));
+
+        login = new Dialog(Introduce.this, R.style.LoginAlertDialog);
     }
 
     public void setListener() {
@@ -124,6 +138,12 @@ public class Introduce extends Activity {
                 if(progress != null && progress.isShowing()) {
                     progress.dismiss();
                 }
+                if(login != null && login.isShowing()) {
+                    login.dismiss();
+                }
+                Editor editor = mSPreference.edit();
+                editor.putString("username", mUserName.getText().toString());
+                editor.commit();
                 Intent intent = new Intent();
                 intent.setClass(Introduce.this, Home.class);
                 startActivity(intent);
@@ -144,7 +164,6 @@ public class Introduce extends Activity {
             @Override
             public void onClick(View v) {
                 View loginView = LayoutInflater.from(Introduce.this).inflate(R.layout.login, null);
-                final Dialog login = new Dialog(Introduce.this, R.style.LoginAlertDialog);
                 login.setContentView(loginView);
                 login.show();
 
@@ -152,6 +171,8 @@ public class Introduce extends Activity {
                 Button loginButton = (Button) loginView.findViewById(R.id.loginButton);
                 mUserName = (EditText) loginView.findViewById(R.id.userName);
                 mPassword = (EditText) loginView.findViewById(R.id.password);
+                String username = mSPreference.getString("username", "");
+                mUserName.setText(username);
 
                 cancelButton.setOnClickListener(new View.OnClickListener() {
                     @Override

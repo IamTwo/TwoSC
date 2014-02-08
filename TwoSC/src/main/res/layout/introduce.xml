@@ -31,8 +31,6 @@
         <android.support.v4.view.ViewPager
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
-            android:layout_marginLeft="@dimen/introduce_margin"
-            android:layout_marginRight="@dimen/introduce_margin"
             android:id="@+id/photoPage"
             android:layout_marginTop="@dimen/introduce_margin"/>
     </LinearLayout>

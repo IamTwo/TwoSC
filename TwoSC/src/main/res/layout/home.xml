@@ -1,10 +1,59 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <GridView
-        android:id="@+id/gridView"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/half_translucent_black" >
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:numColumns="3"/>
-</RelativeLayout>
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/LOGORelativeLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/green_2c5b25"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_launcher" >
+            </ImageView>
+
+            <Button
+                android:id="@+id/settingBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/settings">
+            </Button>
+
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:numColumns="3"
+            android:layout_below="@id/LOGORelativeLayout"
+            android:layout_marginTop="@dimen/home_item_top_margin"/>
+    </RelativeLayout>
+</LinearLayout>

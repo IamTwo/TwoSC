@@ -28,6 +28,7 @@ dependencies {
 	compile 'com.android.support:appcompat-v7:+'
     compile 'com.github.chrisbanes.pulltorefresh:pulltorefresh:1.4.1@aar'
     compile project(":ext:Volley")
-    compile project(":ext:ViewPagerIndicator:library")
+    compile project(":ext:ViewPagerIndicator:ViewPagerIndicator")
+    compile project(":ext:SlidingMenu:SlidingMenu")
 }
 

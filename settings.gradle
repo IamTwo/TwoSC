@@ -1,1 +1,2 @@
-include ':TwoSC', ':ext:Volley', ":ext:ViewPagerIndicator:library"
+include ':TwoSC', ':ext:Volley', ":ext:ViewPagerIndicator:ViewPagerIndicator",
+        ":ext:SlidingMenu:SlidingMenu"
