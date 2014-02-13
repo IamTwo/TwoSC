@@ -2,10 +2,10 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/assets" />
+        <source path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/ViewPagerIndicator/assets" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/library/src/debug/assets" />
+        <source path="/Users/apple/Documents/Project/TwoSC/ext/ViewPagerIndicator/ViewPagerIndicator/src/debug/assets" />
     </dataSet>
 
 </merger>

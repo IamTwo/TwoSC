@@ -3,12 +3,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <com.handmark.pulltorefresh.library.PullToRefreshListView
-            android:id="@+id/activityList" android:layout_width="fill_parent"
+    <!--<LinearLayout android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:orientation="horizontal">-->
+        <!--<com.handmark.pulltorefresh.library.PullToRefreshListView-->
+            <!--android:id="@+id/activityList" android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:fadingEdge="none">-->
+        <!--</com.handmark.pulltorefresh.library.PullToRefreshListView>-->
+    <!--</LinearLayout>-->
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        
+        <LinearLayout
             android:layout_height="fill_parent"
-            android:fadingEdge="none">
-        </com.handmark.pulltorefresh.library.PullToRefreshListView>
-    </RelativeLayout>
+            android:layout_width="fill_parent"
+            android:orientation="vertical">
+            <TabWidget
+                android:id="@+id/tabs"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal">
+            </TabWidget>
+
+            <FrameLayout
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+            </FrameLayout>
+        </LinearLayout>
+
+    </TabHost>
 </LinearLayout>

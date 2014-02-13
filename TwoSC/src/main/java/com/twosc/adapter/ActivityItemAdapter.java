@@ -27,7 +27,6 @@ public class ActivityItemAdapter extends BaseAdapter {
         super();
         this.mActivityItems = activityItems;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        initFirstStart();
     }
 
     @Override
@@ -62,8 +61,8 @@ public class ActivityItemAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void initFirstStart() {
-        mFirstStart = mActivityItems.get(0).getStart().split(" ")[0];
-        mFirstStart = TwoSCUtil.formatDate(mFirstStart);
-    }
+//    public void initFirstStart() {
+//        mFirstStart = mActivityItems.get(0).getStart().split(" ")[0];
+//        mFirstStart = TwoSCUtil.formatDate(mFirstStart);
+//    }
 }

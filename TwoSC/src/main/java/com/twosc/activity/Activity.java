@@ -1,6 +1,7 @@
 package com.twosc.activity;
 
 import android.os.Bundle;
+import android.widget.TabHost;
 
 import com.android.volley.Response.Listener;
 import com.android.volley.Response.ErrorListener;
@@ -42,21 +43,22 @@ public class Activity extends TwoActivity{
     }
 
     public void initData() {
+        TabHost tabHost = getTabHost(); // 选项卡类似于java中的卡片布局
         mActivityRequest = new ActivityRequest(mListener, mErrorListener, this);
         mActivityRequest.execute();
 
+        activityItems = new ArrayList<ActivityItem>();
         activityItemAdapter = new ActivityItemAdapter(this, activityItems);
         mActivityListView.setAdapter(activityItemAdapter);
-
-        activityItems = new ArrayList<ActivityItem>();
     }
 
     public void setListener() {
         mListener = new Listener<String>() {
             @Override
             public void onResponse(String response) {
-                activityItems = JSONParser.getActivityDetails(response);
-
+                activityItems.addAll(JSONParser.getActivityDetails(response));
+                activityItemAdapter.notifyDataSetChanged();
+                //activityItemAdapter.initFirstStart();
             }
         };
 

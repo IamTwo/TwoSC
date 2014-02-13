@@ -72,9 +72,9 @@
     <orderEntry type="library" exported="" name="support-v4-18.0.0" level="project" />
     <orderEntry type="library" exported="" name="ComGithubChrisbanesPulltorefreshPulltorefresh141.aar" level="project" />
     <orderEntry type="library" exported="" name="ComAndroidSupportAppcompatV71800.aar" level="project" />
+    <orderEntry type="module" module-name="ViewPagerIndicator-ViewPagerIndicator" exported="" />
+    <orderEntry type="module" module-name="SlidingMenu-SlidingMenu" exported="" />
     <orderEntry type="module" module-name="Volley" exported="" />
-    <orderEntry type="module" module-name="ViewPagerIndicator" exported="" />
-    <orderEntry type="module" module-name="SlidingMenu" exported="" />
   </component>
 </module>
 
